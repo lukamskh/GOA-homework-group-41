@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+body{
+    position: relative;
+    top: 200px;
+}
+#header{
+    grid-area: header;
+    background-color: aqua;
+}
+#footer{
+    grid-area: footer;
+    background-color: khaki;
+}
+#content1{
+    grid-area: content1;
+    background-color: aquamarine;
+}
+#content2{
+    grid-area: content2;
+    background-color: beige;
+}
+#content3{
+    grid-area: content3;
+    background-color: blueviolet;
+}
+#content{
+  grid-area: content;
+  background-color: chocolate;
+}
+#navigation{
+    grid-area: navigation;
+    background-color: darkgreen;
+}
+
+.grid-{
+    display: grid;
+    grid-template-columns: 100px auto auto auto auto auto auto;
+    grid-template-rows: auto 100px 100px auto 100px 100px 50px;
+    grid-template-areas: 
+    "navigation header header header header header header"
+    "navigation content1 content1 content2 content2 content3 content3"
+    "navigation content1 content1 content2 content2 content3 content3"
+      "navigation content1 content1 content2 content2 content3 content3"
+      "navigation content content content content content content"
+      "navigation content content content content content content"
+      "navigation content content content content content content"
+    "navigation footer footer footer footer footer footer";
+    gap: 10px;
+    padding: 10px;
+    background-color: black;
+}
+.grid- > div {
+  background-color: rgba(255, 255, 255);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
+</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="grid-">
+        <div id="header" >header</div>
+        <div id="navigation" >aside</div>
+        <div id="content1" >cont1</div>
+        <div id="content2">cont2</div>
+        <div id="content3">cont3</div>
+        <div id="content">content</div>
+        <div id="footer" >footer</div>
+    </div>
+</body>
+</html>
