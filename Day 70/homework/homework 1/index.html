@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="size">
+        <div id="rem" >rem</div>
+        <div id="yello" >yello</div>
+        <div id="greed" >greed</div>
+        <div id="greem" >greem</div>
+        <div id="reb" >reb</div>
+        <div id="yellow" >yellow</div>
+        <div id="red" >red</div>
+        <div id="green" >green</div>
+    </div>
+<style>
+#size{
+position: relative;
+top: 150px;
+left: 150px;
+}
+#yellow{
+    grid-area: yellow_;
+    background-color: yellow;
+    border: 5px solid black;
+}
+#red{
+    grid-area: red_;
+    background-color: red;
+    border: 5px solid black;
+}
+#green{
+    grid-area: green_;
+    background-color: green;
+    border: 5px solid black;
+}
+#greem{
+    grid-area: greem_;
+    background-color: greenyellow;
+    border: 5px solid black;
+}
+#reb{
+    grid-area: reb_;
+    background-color: rgb(148, 16, 16);
+    border: 5px solid black;
+}
+#greed{
+    grid-area: greed_;
+    background-color: greenyellow;
+    border: 5px solid black;
+}
+#yello{
+    grid-area: yello_;
+    background-color: yellow;
+    border: 5px solid black;
+}
+#rem{
+    grid-area: rem_;
+    background-color:  rgb(148, 16, 16);
+    border: 5px solid black;
+}
+#size{
+    display: grid;
+    grid-template-areas: 
+    "greem_ green_ green_ green_ green_ green_ green_ red_"
+    "greem_ yellow_ yellow_ yellow_ reb_ reb_ reb_ greed_"
+    "greem_ yellow_ yellow_ yellow_ reb_ reb_ reb_ greed_"
+    "greem_ yellow_ yellow_ yellow_ reb_ reb_ reb_ greed_"
+    "greem_ rem_ rem_ rem_ yello_ yello_ yello_ greed_"
+    "greem_ rem_ rem_ rem_ yello_ yello_ yello_ greed_"
+    "greem_ rem_ rem_ rem_ yello_ yello_ yello_ greed_"
+    ;
+    grid-template-rows: 70px 70px 70px 70px 70px 70px 70px 70px;
+    grid-template-columns: 220px 220px 220px 220px 220px 220px 220px 220px;
+}
+</style>
+</body>
+</html>
