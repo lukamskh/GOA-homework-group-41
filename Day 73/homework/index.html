@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="num1" ></div>
+    <div id="num2" ></div>
+    <div id="num3" ></div>
+    <div id="num4" ></div>
+    <div id="num5" >hello world</div>
+</body>
+<style>
+    #num1{
+        position: relative;
+        background-color: red;
+        height: 100px;
+        width: 100px;
+        top: 100px;
+        left: 100px;
+        transition: 500ms;
+        border: 10px solid black;
+    }
+    #num1:hover{
+        transform: translate(100px,50px);
+    }
+    #num2{
+        position: relative;
+        width: 100px;
+        height: 100px;
+        top: 200px;
+        left: 100px;
+        background-color: green;
+        transition: 500ms;
+    }
+    #num2:hover{
+        border: 10px solid black;
+        scale: 1.5;
+        rotate: 45deg;
+        border-radius: 100px;
+    }
+    #num3{
+        position: relative;
+        top: 300px;
+        left: 100px;
+        height: 100px;
+        width: 200px;
+        background-color: blue;
+        transition: 1s;
+    }
+    #num3:hover{
+        scale: 1.25 1.5;
+    }
+    #num4{
+        position: relative;
+        top: 400px;
+        left: 100px;
+        height: 100px;
+        width: 100px;
+        background-color: yellow;
+        transition: 1.5s;
+    }
+    #num4:hover{
+        scale: 2;
+        rotate: 90deg;
+        translate: 300px;
+        border-radius: 100px;
+    }
+    #num5{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh; 
+        position: relative;
+        top: 500px;
+        left: 100px;
+        height: 50px;
+        width: 150px;
+        background-color: green;
+        transition: 0.8s;
+        text-align: center;
+    }
+    #num5:hover{
+        rotate: 5deg;
+        scale: 1.2;
+        background-color: red;
+    }
+</style>
+</html>
