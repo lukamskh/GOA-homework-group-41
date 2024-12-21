@@ -18,10 +18,12 @@ alert(5*4);
 console.log(5*4);
 alert(6**5);
 console.log(6**5);
-let num = 11
 
+let num = 11;
 for (let i = 0; i < 11; i++) {
-    num = num - 1
-    alert(`The world will be destroyed in ${num} second`)
-    console.log(`The world will be destroyed in ${num} second`)
-}
+    num = num - 1;
+    alert(`The world will be destroyed in ${num} second`);
+    console.log(`The world will be destroyed in ${num} second`);
+};
+// alert გამოიტანს ეკრანზე ტექსტს რომელიც აჩერებს მის მერე მდებარე კოდს მანამ სანამ alert-ს არ დაეანხმები
+// console.log კონსოლში გამოაქვს ტექსტი და არ აჩერებს ან ანელებს კოდს
