@@ -4,7 +4,7 @@ num1 = Number(num1)
 let num2 = prompt("enter num2: ");
 num2 = Number(num2)
 if (num2 > num1) {
-    console.log(`name:${num2} is bigger than ${num1}`);
+    console.log(`name: ${num2} is bigger than ${num1}`);
 } else if (num1 > num2) {
     onsole.log(`name:${num1} is bigger than ${num2}`);
 } else {
