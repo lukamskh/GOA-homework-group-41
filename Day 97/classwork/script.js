@@ -9,6 +9,7 @@ let car = {
     );
   },
 };
+
 console.log(car.brand);
 console.log(car.model);
 console.log(car.color);
@@ -21,4 +22,13 @@ car.model = "GT40";
 car.weight = 998;
 console.log(car.info());
 
-car.mode = "racing";
+car.mode = "sport";
+
+delete car.mode;
+
+let myCarBrand = prompt("enter your car brand: ");
+if (car.brand === myCarBrand) {
+  console.log("იგივე მანქანის ბრენდი გვყოლია ძმობილო");
+} else {
+  console.log(" სხვადასხვა მანქანის ბრენდია, ჩემი მოუგებს");
+}
