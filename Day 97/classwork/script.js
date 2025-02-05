@@ -1,4 +1,4 @@
-let car = {
+let Car = {
   brand: "Mclaren",
   model: "750s",
   color: "yellow",
