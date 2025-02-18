@@ -92,9 +92,9 @@ console.log(Object.isFrozen(updatedHotel));
 
 // შევქმნათ cinema ობიექტი
 const cinema = {
-  cinemaName: "კავეა კინოთეატრი",
+  cinemaName: "movie",
   moviesCount: 10,
-  location: "თბილისი მოლი",
+  location: "earth",
   movieReviews: {
     user1: 4.2,
     user2: 4.7,
@@ -102,33 +102,21 @@ const cinema = {
   },
 };
 
-// გამოვიტანოთ ობიექტის თვისებები და მათი მნიშვნელობები
 for (const key in cinema) {
   if (cinema.hasOwnProperty(key)) {
     console.log(`${key}: ${cinema[key]}`);
   }
 }
 
-// შევამოწმოთ, გააჩნია თუ არა vipSeats ველი
-if (cinema.vipSeats) {
-  console.log("კინოთეატრს აქვს vipSeats ველი.");
-} else {
-  console.log("კინოთეატრს არ აქვს vipSeats ველი.");
-}
+console.log(cinema.vipSeats);
 
-// დავამატოთ ticketPrice ახალი ობიექტის გაერთიანებით
 const newPropsCinema = { ticketPrice: 15 };
 const updatedCinema = Object.assign({}, cinema, newPropsCinema);
 
-console.log("განახლებული კინოთეატრის ობიექტი:", updatedCinema);
+console.log(updatedCinema);
 
-// გავყინოთ ობიექტი და ვცადოთ მისი შეცვლა
 Object.freeze(updatedCinema);
 
-try {
-  updatedCinema.cinemaName = "განახლებული კავეა";
-} catch (error) {
-  console.error("შეცდომა ობიექტის შეცვლის მცდელობისას:", error);
-}
+updatedCinema.cinemaName = "განახლებული კავეა";
 
 console.log(Object.isFrozen(updatedCinema));
