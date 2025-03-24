@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ka">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ყველაფერი ერთად</title>
+    <style>
+      #color-box {
+        width: 200px;
+        height: 100px;
+        margin-top: 10px;
+        border: 1px solid #000;
+      }
+      #image-slider {
+        width: 400px;
+        height: 250px;
+        background-color: #d3d3d3;
+        margin: 10px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>სია</h2>
+    <input type="text" id="list-input" placeholder="შეიყვანეთ ტექსტი" />
+    <button id="add-button">დამატება</button>
+    <button id="clear-button">გასუფთავება</button>
+    <ul id="item-list"></ul>
+
+    <h2>მრიცხველი</h2>
+    <div id="counter">0</div>
+    <button id="increase-button">აღზრდა</button>
+    <button id="decrease-button">შემცირება</button>
+    <button id="increase-10-button">გაზრდა 10-ით</button>
+    <button id="decrease-10-button">შემცირება 10-ით</button>
+
+    <h2>ფერების შემთხვევითი გენერატორი</h2>
+    <div id="color-box">RGB(0, 0, 0)</div>
+    <button id="change-color-button">შეცვლა</button>
+
+    <h2>სლაიდერი</h2>
+    <div id="image-slider"></div>
+    <button id="left-button">მარცხნივ</button>
+    <button id="right-button">მარჯვნივ</button>
+
+    <h2>ტექსტური შეტყობინების ჩვენება</h2>
+    <input type="text" id="message-input" placeholder="შეიყვანეთ შეტყობინება" />
+    <button id="show-message-button">ჩვენება</button>
+    <button id="clear-message-button">გასუფთავება</button>
+    <div id="message-output"></div>
+
+    <script>
+      const addButton = document.getElementById("add-button");
+      const clearButton = document.getElementById("clear-button");
+      const itemList = document.getElementById("item-list");
+      const listInput = document.getElementById("list-input");
+
+      addButton.onclick = function () {
+        const itemText = listInput.value;
+        if (itemText) {
+          const li = document.createElement("li");
+          li.textContent = itemText;
+          itemList.appendChild(li);
+          listInput.value = "";
+        }
+      };
+
+      clearButton.onclick = function () {
+        itemList.innerHTML = "";
+      };
+
+      let counterValue = 0;
+      const counterDiv = document.getElementById("counter");
+
+      document.getElementById("increase-button").onclick = function () {
+        counterValue++;
+        counterDiv.textContent = counterValue;
+      };
+
+      document.getElementById("decrease-button").onclick = function () {
+        counterValue--;
+        counterDiv.textContent = counterValue;
+      };
+
+      document.getElementById("increase-10-button").onclick = function () {
+        counterValue += 10;
+        counterDiv.textContent = counterValue;
+      };
+
+      document.getElementById("decrease-10-button").onclick = function () {
+        counterValue -= 10;
+        counterDiv.textContent = counterValue;
+      };
+
+      const colorBox = document.getElementById("color-box");
+
+      document.getElementById("change-color-button").onclick = function () {
+        const randomColor = `rgb(${Math.floor(
+          Math.random() * 256
+        )}, ${Math.floor(Math.random() * 256)}, ${Math.floor(
+          Math.random() * 256
+        )})`;
+        colorBox.style.backgroundColor = randomColor;
+        colorBox.textContent = randomColor;
+      };
+
+      const images = ["Image 1", "Image 2", "Image 3"];
+      let currentIndex = 0;
+      const imageSlider = document.getElementById("image-slider");
+
+      function updateSlider() {
+        imageSlider.textContent = images[currentIndex];
+      }
+
+      document.getElementById("left-button").onclick = function () {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        updateSlider();
+      };
+
+      document.getElementById("right-button").onclick = function () {
+        currentIndex = (currentIndex + 1) % images.length;
+        updateSlider();
+      };
+
+      const messageInput = document.getElementById("message-input");
+      const messageOutput = document.getElementById("message-output");
+
+      document.getElementById("show-message-button").onclick = function () {
+        const messageText = messageInput.value;
+        if (messageText) {
+          messageOutput.textContent = messageText;
+        } else {
+          messageOutput.textContent = "გთხოვთ შეიყვანოთ ტექსტი";
+        }
+      };
+
+      document.getElementById("clear-message-button").onclick = function () {
+        messageInput.value = "";
+        messageOutput.textContent = "";
+      };
+    </script>
+  </body>
+</html>

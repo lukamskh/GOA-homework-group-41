@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ka">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Propagation Example</title>
+    <style>
+      #outer {
+        padding: 20px;
+        background-color: lightblue;
+      }
+      #inner {
+        padding: 20px;
+        background-color: lightcoral;
+      }
+      #button {
+        padding: 10px 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="outer">
+      Outer Div
+      <div id="inner">
+        Inner Div
+        <button id="button">Click me</button>
+      </div>
+    </div>
+
+    <ul id="itemList">
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+      <li>Item 4</li>
+    </ul>
+
+    <script>
+      document.getElementById("outer").addEventListener("click", function () {
+        console.log("Outer Div clicked");
+      });
+
+      document.getElementById("inner").addEventListener("click", function () {
+        console.log("Inner Div clicked");
+      });
+
+      document.getElementById("button").addEventListener("click", function () {
+        console.log("Button clicked");
+      });
+
+      document
+        .getElementById("itemList")
+        .addEventListener("click", function (event) {
+          if (event.target.tagName === "LI") {
+            console.log("You clicked: " + event.target.innerText);
+          }
+        });
+    </script>
+  </body>
+</html>

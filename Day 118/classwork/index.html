@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" />
+    <button onclick="ok()">გადაყვანა</button>
+    <div></div>
+    <script>
+      let input1 = document.querySelector("input").value;
+      let div1 = document.querySelector("div");
+      let num = 0;
+      function ok() {
+        if (num % 2 === 0) {
+          div1.innerText = `${(Number(input1) * 9) / 5 + 3}`;
+          num += 1;
+        } else {
+          div1.innerText = `${((Number(input1) - 32) * 5) / 9}`;
+          num += 1;
+        }
+      }
+    </script>
+  </body>
+</html>
