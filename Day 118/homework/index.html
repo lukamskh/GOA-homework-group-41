@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ყველაფერი ერთად</title>
     <style>
       #color-box {
         width: 200px;
@@ -16,6 +15,13 @@
         height: 250px;
         background-color: #d3d3d3;
         margin: 10px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      #slider-image {
+        max-width: 100%;
+        max-height: 100%;
       }
     </style>
   </head>
@@ -31,14 +37,16 @@
     <button id="increase-button">აღზრდა</button>
     <button id="decrease-button">შემცირება</button>
     <button id="increase-10-button">გაზრდა 10-ით</button>
-    <button id="decrease-10-button">შემცირება 10-ით</button>
+    <button id="decrease-10-button">შეამცირება 10-ით</button>
 
     <h2>ფერების შემთხვევითი გენერატორი</h2>
     <div id="color-box">RGB(0, 0, 0)</div>
     <button id="change-color-button">შეცვლა</button>
 
     <h2>სლაიდერი</h2>
-    <div id="image-slider"></div>
+    <div id="image-slider">
+      <img id="slider-image" src="smth1.png" alt="slider image" />
+    </div>
     <button id="left-button">მარცხნივ</button>
     <button id="right-button">მარჯვნივ</button>
 
@@ -103,12 +111,12 @@
         colorBox.textContent = randomColor;
       };
 
-      const images = ["Image 1", "Image 2", "Image 3"];
+      const images = ["smth1.png", "smth2.png", "smth3.png"];
       let currentIndex = 0;
-      const imageSlider = document.getElementById("image-slider");
+      const sliderImage = document.getElementById("slider-image");
 
       function updateSlider() {
-        imageSlider.textContent = images[currentIndex];
+        sliderImage.src = images[currentIndex];
       }
 
       document.getElementById("left-button").onclick = function () {
@@ -137,6 +145,8 @@
         messageInput.value = "";
         messageOutput.textContent = "";
       };
+
+      updateSlider();
     </script>
   </body>
 </html>
