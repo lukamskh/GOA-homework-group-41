@@ -1,8 +1,8 @@
 {
     "user": {
-        "firstname": "Nika",
-        "lastname": "Giorgadze",
-        "age": 22,
-        "email": "nika.giorgadze@example.com"
+        "firstname": "Luka",
+        "lastname": "Not_luka",
+        "age": 15,
+        "email": "luka.not_luka@example.com"
     }
 }

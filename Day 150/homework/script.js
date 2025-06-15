@@ -1,8 +1,8 @@
 const person = {
-    name: "Alice",
-    age: 25,
-    city: "Tbilisi",
-    hobbies: ["reading", "coding", "hiking"]
+    name: "Bob",
+    age: 1,
+    city: "earth",
+    hobbies: ["reading", "coding", "stealing"]
 };
 
 console.log(person.name);
